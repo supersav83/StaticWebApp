@@ -1,17 +1,501 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Maria & Jamie Quiz</title>
+<style>body{font-family:Arial;margin:0;padding:20px;background:#f4f6f8}.container{max-width:900px;margin:auto;background:#fff;padding:24px;border-radius:12px}.question{display:none}.question.active{display:block}.progress{height:20px;background:#ddd;border-radius:20px;overflow:hidden}.fill{height:100%;width:0;background:#1f4e79}.nav{display:flex;justify-content:space-between;margin-top:20px}button{padding:10px 18px}
+</style>
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
+<div class='container'><h1>Maria & Jamie's 10-Year Quiz</h1>
+<label>Team Name</label><input id='teamName' style='width:100%;padding:10px'>
+<div id='counter'></div><div class='progress'><div id='fill' class='fill'></div></div><p id='pct'>0%</p><div id='quizContainer'>
+<div class='question active'><p>Which of these was not a honeymoon destination?</p><label><input type='radio' name='q1' value='Las Vegas'> Las Vegas</label><br><label><input type='radio' name='q1' value='San Francisco'> San Francisco</label><br><label><input type='radio' name='q1' value='Los Angeles'> Los Angeles</label></div>
+<div class='question'><p>Shortly after the honeymoon which destination did Maria and Jamie jet off to?</p><label>
+<input type='radio' name='q2' value='Dublin'> Dublin</label><br><label>
+<input type='radio' name='q2' value='Reykjavik'> Reykjavik</label><br><label>
+<input type='radio' name='q2' value='New York'> New York</label></div>
 
-</html>
+
+<div class="question">
+    <p>Which historic event happened at the answer above?</p>
+    <label><input type="radio" name="q3" value="Trump 2016"> Trump 2016</label><br>
+    <label><input type="radio" name="q3" value="Brexit"> Brexit</label><br>
+    <label><input type="radio" name="q3" value="Portugal won the Euros"> Portugal won the Euros</label>
+</div>
+
+
+<div class="question">
+    <p>Which location did Maria forget to take her ID which prevented entry?</p>
+    <label><input type="radio" name="q4" value="Casino Monte Carlo"> Casino Monte Carlo</label><br>
+    <label><input type="radio" name="q4" value="Coyote Ugly in Nashville"> Coyote Ugly in Nashville</label><br>
+    <label><input type="radio" name="q4" value="Vodka Revolutions in Bournemouth"> Vodka Revolutions in Bournemouth</label>
+</div>
+
+
+<div class="question">
+    <p>In Texas they met a couple who loved which UK TV show?</p>
+    <label><input type="radio" name="q5" value="This Morning"> This Morning</label><br>
+    <label><input type="radio" name="q5" value="Midsummer Murders"> Midsummer Murders</label><br>
+    <label><input type="radio" name="q5" value="Morse"> Morse</label>
+</div>
+
+<div class="question">
+    <p>What place did Maria and Jamie come in the Bridport Hat Festival?</p>
+    <label><input type="radio" name="q6" value="1st"> 1st</label><br>
+    <label><input type="radio" name="q6" value="2nd"> 2nd</label><br>
+    <label><input type="radio" name="q6" value="3rd"> 3rd</label>
+</div>
+
+<div class="question">
+    <p>What city were Maria and Jamie in when Maria first suspected pregnancy?</p>
+    <label><input type="radio" name="q7" value="Madrid"> Madrid</label><br>
+    <label><input type="radio" name="q7" value="Rome"> Rome</label><br>
+    <label><input type="radio" name="q7" value="Paris"> Paris</label>
+</div>
+
+<div class="question">
+    <p>Where did Maria and Jamie see in the New Year?</p>
+    <label><input type="radio" name="q8" value="London"> London</label><br>
+    <label><input type="radio" name="q8" value="Bournemouth"> Bournemouth</label><br>
+    <label><input type="radio" name="q8" value="Edinburgh"> Edinburgh</label>
+</div>
+
+<div class="question">
+    <p>What was the catchphrase of the hotel lady?</p>
+    <label><input type="radio" name="q9" value="You can't have that"> You can't have that</label><br>
+    <label><input type="radio" name="q9" value="For other guests"> For other guests</label><br>
+    <label><input type="radio" name="q9" value="Not for you"> Not for you</label>
+</div>
+
+<div class="question">
+    <p>What was Lily's birth weight?</p>
+    <label><input type="radio" name="q10" value="7lbs 4oz"> 7lbs 4oz</label><br>
+    <label><input type="radio" name="q10" value="8lbs 6oz"> 8lbs 6oz</label><br>
+    <label><input type="radio" name="q10" value="8lbs 12oz"> 8lbs 12oz</label>
+</div>
+
+<!-- Year 3 -->
+
+<div class="question">
+    <p>What was the date of Lily's naming ceremony?</p>
+    <label><input type="radio" name="q11" value="20th October 2018"> 20th October 2018</label><br>
+    <label><input type="radio" name="q11" value="27th October 2018"> 27th October 2018</label><br>
+    <label><input type="radio" name="q11" value="10th November 2018"> 10th November 2018</label>
+</div>
+
+<div class="question">
+    <p>Where did the family go for Maria's birthday weekend that year?</p>
+    <label><input type="radio" name="q12" value="Birmingham"> Birmingham</label><br>
+    <label><input type="radio" name="q12" value="Cardiff"> Cardiff</label><br>
+    <label><input type="radio" name="q12" value="London"> London</label>
+</div>
+
+<div class="question">
+    <p>Who did we think was Lily's favourite in the house?</p>
+    <label><input type="radio" name="q13" value="Daddy"> Daddy</label><br>
+    <label><input type="radio" name="q13" value="Rampage"> Rampage</label><br>
+    <label><input type="radio" name="q13" value="Mummy"> Mummy</label>
+</div>
+
+<div class="question">
+    <p>Who, as a family, did everyone support at WrestleMania 35 due to Lily taking a liking to the wrestler?</p>
+    <label><input type="radio" name="q14" value="The Rock"> The Rock</label><br>
+    <label><input type="radio" name="q14" value="John Cena"> John Cena</label><br>
+    <label><input type="radio" name="q14" value="Becky Lynch"> Becky Lynch</label>
+</div>
+
+<div class="question">
+    <p>Where did Lily start crawling?</p>
+    <label><input type="radio" name="q15" value="Majorca"> Majorca</label><br>
+    <label><input type="radio" name="q15" value="Tenerife"> Tenerife</label><br>
+    <label><input type="radio" name="q15" value="Barcelona"> Barcelona</label>
+</div>
+
+<!-- Year 4 -->
+
+<div class="question">
+    <p>Lily started walking but where was she?</p>
+    <label><input type="radio" name="q16" value="Lake Geneva"> Lake Geneva</label><br>
+    <label><input type="radio" name="q16" value="Temple Bar, Dublin"> Temple Bar, Dublin</label><br>
+    <label><input type="radio" name="q16" value="Houses of Parliament"> Houses of Parliament</label>
+</div>
+
+<div class="question">
+    <p>Maria gave a talk at the Houses of Parliament, but who was it for?</p>
+    <label><input type="radio" name="q17" value="Breastfeeding Support"> Breastfeeding Support</label><br>
+    <label><input type="radio" name="q17" value="Swim England"> Swim England</label><br>
+    <label><input type="radio" name="q17" value="University Hospitals Dorset"> University Hospitals Dorset</label>
+</div>
+
+<div class="question">
+    <p>Maria and Jamie with Lily did a photoshoot in London promoting a sport which helped them through a difficult time. What was the sport?</p>
+    <label><input type="radio" name="q18" value="Boxing"> Boxing</label><br>
+    <label><input type="radio" name="q18" value="Squash"> Squash</label><br>
+    <label><input type="radio" name="q18" value="Rhythmic Gymnastics"> Rhythmic Gymnastics</label>
+</div>
+
+<div class="question">
+    <p>What did Lily call Rampage when she started talking?</p>
+    <label><input type="radio" name="q19" value="Page"> Page</label><br>
+    <label><input type="radio" name="q19" value="Bubble"> Bubble</label><br>
+    <label><input type="radio" name="q19" value="Rammy"> Rammy</label>
+</div>
+
+<div class="question">
+    <p>Where was the last holiday before the world shut down?</p>
+    <label><input type="radio" name="q20" value="Cornwall"> Cornwall</label><br>
+    <label><input type="radio" name="q20" value="Devon"> Devon</label><br>
+    <label><input type="radio" name="q20" value="Sussex"> Sussex</label>
+</div>
+
+<!-- Year 5 -->
+
+<div class="question">
+    <p>Maria had suspicions she was pregnant and a subtle sign in the sky convinced her she was. What was it?</p>
+    <label><input type="radio" name="q21" value="Clouds made a heart shape"> Clouds made a heart shape</label><br>
+    <label><input type="radio" name="q21" value="A rainbow on the day her period was due"> A rainbow on the day her period was due</label><br>
+    <label><input type="radio" name="q21" value="A Mermaid pub sign holding a baby"> A Mermaid pub sign holding a baby</label>
+</div>
+
+<div class="question">
+    <p>Which activity did we discover Maria was quite deadly at and made Jamie take out life insurance?</p>
+    <label><input type="radio" name="q22" value="Axe-throwing"> Axe-throwing</label><br>
+    <label><input type="radio" name="q22" value="Archery"> Archery</label><br>
+    <label><input type="radio" name="q22" value="Knife throwing"> Knife throwing</label>
+</div>
+
+<div class="question">
+    <p>Who would regularly check Maria's bump at home?</p>
+    <label><input type="radio" name="q23" value="Rampage"> Rampage</label><br>
+    <label><input type="radio" name="q23" value="Dr Lily"> Dr Lily</label><br>
+    <label><input type="radio" name="q23" value="Both of them"> Both of them</label>
+</div>
+
+<div class="question">
+    <p>Which parent wouldn't let Lily win at her first game of bowling?</p>
+    <label><input type="radio" name="q24" value="Maria"> Maria</label><br>
+    <label><input type="radio" name="q24" value="Jamie"> Jamie</label><br>
+    <label><input type="radio" name="q24" value="Both of them"> Both of them</label>
+</div>
+
+<div class="question">
+    <p>What was Daphne's birth weight?</p>
+    <label><input type="radio" name="q25" value="6lbs 12oz"> 6lbs 12oz</label><br>
+    <label><input type="radio" name="q25" value="7lbs 2oz"> 7lbs 2oz</label><br>
+    <label><input type="radio" name="q25" value="7lbs 6oz"> 7lbs 6oz</label>
+</div>
+
+<!-- Year 6 -->
+
+<div class="question">
+    <p>Which event would Lily refuse to let Daddy do on his own?</p>
+    <label><input type="radio" name="q26" value="Contender Festival Obstacle Course"> Contender Festival Obstacle Course</label><br>
+    <label><input type="radio" name="q26" value="Dorset Mud Trail"> Dorset Mud Trail</label><br>
+    <label><input type="radio" name="q26" value="Chicken Wing Eating Contest"> Chicken Wing Eating Contest</label>
+</div>
+
+<div class="question">
+    <p>Where did they take Daphne on her first holiday?</p>
+    <label><input type="radio" name="q27" value="Hastings"> Hastings</label><br>
+    <label><input type="radio" name="q27" value="Newquay"> Newquay</label><br>
+    <label><input type="radio" name="q27" value="Cheddar"> Cheddar</label>
+</div>
+
+<div class="question">
+    <p>How did Maria see in the New Year that year?</p>
+    <label><input type="radio" name="q28" value="Partied until 4am"> Partied until 4am</label><br>
+    <label><input type="radio" name="q28" value="Went for a sea swim on New Year's Day"> Went for a sea swim on New Year's Day</label><br>
+    <label><input type="radio" name="q28" value="Went for a run along the beachfront"> Went for a run along the beachfront</label>
+</div>
+
+<div class="question">
+    <p>Maria had a well-earned day at the spa, but where did Jamie take the kids for the day?</p>
+    <label><input type="radio" name="q29" value="Dinosaur Museum in Dorchester"> Dinosaur Museum in Dorchester</label><br>
+    <label><input type="radio" name="q29" value="To the cinema to watch Spider-Man"> To the cinema to watch Spider-Man</label><br>
+    <label><input type="radio" name="q29" value="To the Oceanarium"> To the Oceanarium</label>
+</div>
+
+<div class="question">
+    <p>The family returned to a special place for Daphne's first holiday outside England. Where did they go?</p>
+    <label><input type="radio" name="q30" value="Tenerife"> Tenerife</label><br>
+    <label><input type="radio" name="q30" value="Edinburgh"> Edinburgh</label><br>
+    <label><input type="radio" name="q30" value="Amsterdam"> Amsterdam</label>
+</div>
+
+<div class="question">
+    <p>The girls shared a birthday party but what made the party unusual?</p>
+    <label><input type="radio" name="q31" value="No parents were allowed"> No parents were allowed</label><br>
+    <label><input type="radio" name="q31" value="The venue lost the booking"> The venue lost the booking</label><br>
+    <label><input type="radio" name="q31" value="One of the girls was sick and missed the party"> One of the girls was sick and missed the party</label>
+</div>
+
+<div class="question">
+    <p>To join a family holiday one parent and one child caught the train in the wrong direction. Name the parent and child.</p>
+    <label><input type="radio" name="q32" value="Maria and Lily"> Maria and Lily</label><br>
+    <label><input type="radio" name="q32" value="Maria and Daphne"> Maria and Daphne</label><br>
+    <label><input type="radio" name="q32" value="Jamie and Lily"> Jamie and Lily</label>
+	<label><input type="radio" name="q32" value="Jamie and Daphne"> Jamie and Daphne</label>
+</div>
+
+<!-- Year 7 -->
+
+<div class="question">
+    <p>This year of marriage started on holiday at a club Lily loved. What was the name of the club?</p>
+    <label><input type="radio" name="q33" value="Sammy Squad"> Sammy Squad</label><br>
+    <label><input type="radio" name="q33" value="Gordons Gang"> Gordons Gang</label><br>
+    <label><input type="radio" name="q33" value="Timmy's Team"> Timmy's Team</label>
+</div>
+
+<div class="question">
+    <p>Which campsite did the family visit for the first time?</p>
+    <label><input type="radio" name="q34" value="Eweleaze Farm"> Eweleaze Farm</label><br>
+    <label><input type="radio" name="q34" value="Petruth Paddock"> Petruth Paddock</label><br>
+    <label><input type="radio" name="q34" value="Swanage Bay"> Swanage Bay</label>
+</div>
+
+<div class="question">
+    <p>We had one last family holiday with Rampage. Where did we go?</p>
+    <label><input type="radio" name="q35" value="Okehampton"> Okehampton</label><br>
+    <label><input type="radio" name="q35" value="Bude"> Bude</label><br>
+    <label><input type="radio" name="q35" value="Cheddar"> Cheddar</label>
+</div>
+
+<div class="question">
+    <p>What did Lily play in her first nativity?</p>
+    <label><input type="radio" name="q36" value="Tree"> Tree</label><br>
+    <label><input type="radio" name="q36" value="Mary"> Mary</label><br>
+    <label><input type="radio" name="q36" value="Star"> Star</label>
+</div>
+
+<div class="question">
+    <p>Which of these did we NOT have replaced in the house that year?</p>
+    <label><input type="radio" name="q37" value="Kitchen"> Kitchen</label><br>
+    <label><input type="radio" name="q37" value="Bathroom"> Bathroom</label><br>
+    <label><input type="radio" name="q37" value="Conservatory"> Conservatory</label>
+</div>
+
+<div class="question">
+    <p>We spent Easter in a new location. What was the location?</p>
+    <label><input type="radio" name="q38" value="Warwick Castle"> Warwick Castle</label><br>
+    <label><input type="radio" name="q38" value="Cotswolds"> Cotswolds</label><br>
+    <label><input type="radio" name="q38" value="Kenilworth Castle"> Kenilworth Castle</label>
+</div>
+
+<!-- Year 8 -->
+
+<div class="question">
+    <p>The family went to a festival together. What was the festival?</p>
+    <label><input type="radio" name="q39" value="Download"> Download</label><br>
+    <label><input type="radio" name="q39" value="Bestival"> Bestival</label><br>
+    <label><input type="radio" name="q39" value="Purbeck Folk Festival"> Purbeck Folk Festival</label>
+</div>
+
+<div class="question">
+    <p>They also got remarried at the above festival. Which artist finished the night off?</p>
+    <label><input type="radio" name="q40" value="Sophie Ellis-Bextor"> Sophie Ellis-Bextor</label><br>
+    <label><input type="radio" name="q40" value="Craig David"> Craig David</label><br>
+    <label><input type="radio" name="q40" value="Fatboy Slim"> Fatboy Slim</label>
+</div>
+
+<div class="question">
+    <p>Daphne destroyed a priceless item at Anfield. What was the item?</p>
+    <label><input type="radio" name="q41" value="Champions League Trophy"> Champions League Trophy</label><br>
+    <label><input type="radio" name="q41" value="FA Cup"> FA Cup</label><br>
+    <label><input type="radio" name="q41" value="Premier League Trophy"> Premier League Trophy</label>
+</div>
+
+<div class="question">
+    <p>Maria typically plans the holidays but Jamie chose Bakewell for the Peak District destination. Why?</p>
+    <label><input type="radio" name="q42" value="Maria always bakes well"> Maria always bakes well</label><br>
+    <label><input type="radio" name="q42" value="He loves the tarts"> He loves the tarts</label><br>
+    <label><input type="radio" name="q42" value="It was central to where they wanted to go"> It was central to where they wanted to go</label>
+</div>
+
+<div class="question">
+    <p>At a Devon holiday park disco, Daphne ran away. What did staff give her?</p>
+    <label><input type="radio" name="q43" value="An Easter egg"> An Easter egg</label><br>
+    <label><input type="radio" name="q43" value="A Betty doll"> A Betty doll</label><br>
+    <label><input type="radio" name="q43" value="A fidget toy"> A fidget toy</label>
+</div>
+
+<div class="question">
+    <p>What special Father's Day gift did Maria get Jamie?</p>
+    <label><input type="radio" name="q44" value="Liverpool Premier League trophy keyring"> Liverpool Premier League trophy keyring</label><br>
+    <label><input type="radio" name="q44" value="Nando's gift card"> Nando's gift card</label><br>
+    <label><input type="radio" name="q44" value="Rampage-themed Hawaiian shirt"> Rampage-themed Hawaiian shirt</label>
+</div>
+
+<div class="question">
+    <p>Who were the special guests at the girls' birthday party?</p>
+    <label><input type="radio" name="q45" value="Snow White"> Snow White</label><br>
+    <label><input type="radio" name="q45" value="Paw Patrol"> Paw Patrol</label><br>
+    <label><input type="radio" name="q45" value="Elsa and Anna"> Elsa and Anna</label>
+</div>
+
+<!-- Year 9 -->
+
+<div class="question">
+    <p>Maria competed in the New Forest Marathon. Which parent ran with Lily?</p>
+    <label><input type="radio" name="q46" value="Maria"> Maria</label><br>
+    <label><input type="radio" name="q46" value="Jamie"> Jamie</label>
+</div>
+
+<div class="question">
+    <p>At Carl and Leona's wedding, what did Daphne announce during Carl's speech?</p>
+    <label><input type="radio" name="q47" value="I've done a poo in my pants"> I've done a poo in my pants</label><br>
+    <label><input type="radio" name="q47" value="I want to go home"> I want to go home</label><br>
+    <label><input type="radio" name="q47" value="Lily's been licking me"> Lily's been licking me</label>
+</div>
+
+<div class="question">
+    <p>What made Lily's birthday ice cream sundae special?</p>
+    <label><input type="radio" name="q48" value="It had Haribo in it"> It had Haribo in it</label><br>
+    <label><input type="radio" name="q48" value="It had flying saucers in it"> It had flying saucers in it</label><br>
+    <label><input type="radio" name="q48" value="It was pure chocolate ice cream"> It was pure chocolate ice cream</label>
+</div>
+
+<div class="question">
+    <p>What event did the whole family dress up for?</p>
+    <label><input type="radio" name="q49" value="St Thomas Christmas Eve Nativity"> St Thomas Christmas Eve Nativity</label><br>
+    <label><input type="radio" name="q49" value="White Christmas Dip"> White Christmas Dip</label><br>
+    <label><input type="radio" name="q49" value="None, Jamie doesn't do fancy dress"> None, Jamie doesn't do fancy dress</label>
+</div>
+
+<div class="question">
+    <p>Before the London Marathon, Maria also completed what challenge?</p>
+    <label><input type="radio" name="q50" value="A marathon over the Purbecks"> A marathon over the Purbecks</label><br>
+    <label><input type="radio" name="q50" value="A 5km sea swim"> A 5km sea swim</label><br>
+    <label><input type="radio" name="q50" value="The London Marathon in reverse at midnight"> The London Marathon in reverse at midnight</label>
+</div>
+
+<div class="question">
+    <p>At which race did the whole family run together following Maria's marathon the day before?</p>
+    <label><input type="radio" name="q51" value="Giants Head Marathon"> Giants Head Marathon</label><br>
+    <label><input type="radio" name="q51" value="Race to the King"> Race to the King</label><br>
+    <label><input type="radio" name="q51" value="Park Run at Upton"> Park Run at Upton</label>
+</div>
+
+<!-- Year 10 -->
+
+<div class="question">
+    <p>Jamie went to the first undisputed heavyweight title fight but almost didn't make it. Why?</p>
+    <label><input type="radio" name="q52" value="Damaged his ankle the night before"> Damaged his ankle the night before</label><br>
+    <label><input type="radio" name="q52" value="Train was terminated at Woking"> Train was terminated at Woking</label><br>
+    <label><input type="radio" name="q52" value="Tummy bug ran through the house"> Tummy bug ran through the house</label>
+</div>
+
+<div class="question">
+    <p>Another holiday park, another group name. What was the name of the characters?</p>
+    <label><input type="radio" name="q53" value="Pagham Party Posse"> Pagham Party Posse</label><br>
+    <label><input type="radio" name="q53" value="Beach Buddies"> Beach Buddies</label><br>
+    <label><input type="radio" name="q53" value="Seaside Squad"> Seaside Squad</label>
+</div>
+
+<div class="question">
+    <p>In Weymouth, Lily finally got to go on which ride?</p>
+    <label><input type="radio" name="q54" value="Ferris Wheel"> Ferris Wheel</label><br>
+    <label><input type="radio" name="q54" value="Helter Skelter"> Helter Skelter</label><br>
+    <label><input type="radio" name="q54" value="Beach Zipwire"> Beach Zipwire</label>
+</div>
+
+<div class="question">
+    <p>Maria and Jamie returned to where they got engaged. Where did they go with the girls?</p>
+    <label><input type="radio" name="q55" value="Iceland"> Iceland</label><br>
+    <label><input type="radio" name="q55" value="Barcelona"> Barcelona</label><br>
+    <label><input type="radio" name="q55" value="Paris"> Paris</label>
+</div>
+
+<div class="question">
+    <p>How much snow fell overnight in Iceland?</p>
+    <label><input type="radio" name="q56" value="6 inches"> 6 inches</label><br>
+    <label><input type="radio" name="q56" value="10 inches"> 10 inches</label><br>
+    <label><input type="radio" name="q56" value="14 inches"> 14 inches</label>
+</div>
+
+<div class="question">
+    <p>Lily became a published author twice, once for a story and once for a poem. What was her poem about?</p>
+    <label><input type="radio" name="q57" value="Rampage"> Rampage</label><br>
+    <label><input type="radio" name="q57" value="Mummy and Daddy"> Mummy and Daddy</label><br>
+    <label><input type="radio" name="q57" value="Daphne"> Daphne</label>
+</div>
+
+<div class="question">
+    <p>What did Maria do on Mother's Day?</p>
+    <label><input type="radio" name="q58" value="Bath Half Marathon"> Bath Half Marathon</label><br>
+    <label><input type="radio" name="q58" value="First Duathlon"> First Duathlon</label><br>
+    <label><input type="radio" name="q58" value="Got pampered"> Got pampered</label>
+</div>
+
+<div class="question">
+    <p>On naming Daphne, Jamie suggested a name which was an anagram of something relating to his favourite football club. What was it?</p>
+    <label><input type="radio" name="q59" value="Delfina"> Delfina</label><br>
+    <label><input type="radio" name="q59" value="Mo"> Mo</label><br>
+    <label><input type="radio" name="q59" value="Bobbi"> Bobbi</label>
+</div>
+
+</div><div class='nav'><button onclick='prevQ()'>Previous</button><button onclick='nextQ()'>Next</button></div><button onclick='submitQuiz()'>Submit Quiz</button><div id='result'></div></div>
+<script>const answerKey = {
+    q1: "San Francisco",
+    q2: "New York",
+	q3: "Trump 2016",
+    q4: "Casino Monte Carlo",
+    q5: "Midsummer Murders",
+    q6: "2nd",
+    q7: "Madrid",
+	q8: "Edinburgh",
+	q9: "Not for you",
+	q10: "8lbs 12oz",
+	q11: "27th October 2018",
+	q12: "London",
+	q13: "Rampage",
+	q14: "Becky Lynch",
+	q15: "Tenerife",
+	q16: "Lake Geneva",
+	q17: "Swim England",
+	q18: "Boxing",
+	q19: "Bubble",
+	q20: "Cornwall",
+	q21: "A rainbow on the day her period was due",
+	q22: "Axe-throwing",
+	q23: "Both of them",
+	q24: "Maria",
+	q25: "7lbs 2oz",
+	q26: "Contender Festival Obstacle Course",
+	q27: "Cheddar",
+    q28: "Went for a sea swim on New Year's Day",
+    q29: "Dinosaur Museum in Dorchester",
+    q30: "Edinburgh",
+    q31: "One of the girls was sick and missed the party",
+	q32: "Maria and Lily",
+    q33: "Sammy Squad",
+	q34: "Eweleaze Farm",
+	q35: "Bude",
+	q36: "Star",
+	q37: "Bathroom",
+	q38: "Warwick Castle",
+	q39: "Bestival",
+	q40: "Craig David",
+	q41: "Premier League Trophy",
+	q42: "He loves the tarts",
+	q43: "A Betty doll",
+	q44: "Rampage-themed Hawaiian shirt",
+	q45: "Elsa and Anna",
+	q46: "Maria",
+	q47: "I've done a poo in my pants",
+	q48: "It had flying saucers in it",
+	q49: "St Thomas Christmas Eve Nativity",
+	q50: "The London Marathon in reverse at midnight",
+	q51: "Giants Head Marathon",
+	q52: "Train was terminated at Woking",
+	q53: "Seaside Squad",
+	q54: "Helter Skelter",
+	q55: "Iceland",
+	q56: "14 inches",
+	q57: "Rampage",
+	q58: "Bath Half Marathon",
+	q59: "Delfina"
+    // continue for all multiple-choice questions
+};
+;const qs=document.querySelectorAll('.question');let current=0;function show(i){qs.forEach(q=>q.classList.remove('active'));qs[i].classList.add('active');counter.innerText=`Question ${i+1} of ${qs.length}`;update()}function update(){let answered=0;Object.keys(answerKey).forEach(k=>{if(document.querySelector(`input[name="${k}"]:checked`))answered++});let p=Math.round(answered/Object.keys(answerKey).length*100);fill.style.width=p+'%';pct.innerText=p+'%'}function nextQ(){if(current<qs.length-1){current++;show(current)}}function prevQ(){if(current>0){current--;show(current)}}document.addEventListener('change',e=>{if(e.target.type==='radio'){update();setTimeout(()=>nextQ(),250)}});function submitQuiz(){let s=0;for(const k in answerKey){const a=document.querySelector(`input[name="${k}"]:checked`)?.value||'';if(a===answerKey[k])s++}result.innerHTML=`<h2>${document.getElementById('teamName').value}</h2><p>Score: ${s}/${Object.keys(answerKey).length}</p>`}show(0);</script></body></html>
